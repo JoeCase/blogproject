@@ -1,6 +1,10 @@
-user_amount = 0
+user_amount = 4
 post_amount = 20
+categories = ['Photos','Videos', 'Text']
+tags = ['dog', 'apple', 'travel','nofilter','yolo', 'happy']
 
+
+# USERS
 user_amount.times do
   User.create(  username:        Faker::Internet.user_name,
                 email:           Faker::Internet.free_email,
@@ -14,9 +18,35 @@ end
 user_ids = User.all.map { |user| user.id }
 
 
-post_amount.times do
-  Post.create( title:     Faker::Book.title,
-               body:      Faker::Lorem.paragraph,
-               user_id:   user_ids.sample
-               )
+
+# CATEGORIES
+categories.each do |category|
+  Category.create(name: category)
 end
+
+category_ids = Category.all.map { |category| category.id }
+
+
+
+# TAGS
+tags.each do |tag|
+  Tag.create(name: tag)
+end
+
+tag_ids = Tag.all.map { |tag| tag.id }
+
+
+
+# POSTS
+post_amount.times do
+  post = Post.create( title:     Faker::Book.title,
+                      body:      Faker::Lorem.paragraph,
+                      user_id:   user_ids.sample
+               )
+  # post.categories << Category.all.sample
+  # post.tags << Tag.all.sample
+end
+
+
+
+

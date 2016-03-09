@@ -1,3 +1,4 @@
 class CategoryPost < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :category
+  belongs_to :post
 end

@@ -1,8 +1,8 @@
 class CreateCategoriesPosts < ActiveRecord::Migration
   def change
-    create_join_table :categories, :posts do |t|
-      t.index :category_id
-      t.index :post_id
+    create_table :categories_posts do |t|
+      t.references :category, index: true
+      t.references :post, index: true
 
       t.timestamps null: false
     end

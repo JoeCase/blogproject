@@ -1,3 +1,5 @@
 class Category < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :posts, through: :categories_posts
+
+  validates :name, presence: true, uniqueness: true
 end

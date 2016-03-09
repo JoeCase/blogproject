@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="166" y="560" name="users">
+</datatypes><table x="160" y="531" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -49,17 +49,23 @@
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <row name="last_name" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="description" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="329" y="311" name="posts">
+<table x="362" y="297" name="posts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="title" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="media" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <row name="body" null="1" autoincrement="0">
@@ -84,7 +90,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="877" y="447" name="comments">
+<table x="998" y="475" name="comments">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -130,7 +136,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="634" y="267" name="posts_tags">
+<table x="660" y="262" name="posts_tags">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
